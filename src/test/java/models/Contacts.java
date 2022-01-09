@@ -14,27 +14,16 @@ public class Contacts {
     String mailingStateProvince;
     String mailingZipPostalCode;
     String mailingCountry;
-    String otherStreet;
-    String otherCity;
-    String otherStateProvince;
-    String otherZipPostalCode;
-    String otherCountry;
-    String fax;
     String homePhone;
     String otherPhone;
-    String asstPhone;
-    String assistant;
     String department;
+    String birthdate;
     String description;
 
-    public Contacts (String salutation, String firstName, String lastName, String accountName, String title, String phone,
-        String mobile, String email, String mailingStreet, String mailingCity, String mailingStateProvince,
-        String mailingZipPostalCode, String mailingCountry, String otherStreet, String otherCity, String otherStateProvince,
-        String otherZipPostalCode, String otherCountry, String fax, String homePhone, String otherPhone, String asstPhone,
-        String assistant, String department, String description){
-        this.salutation = salutation;
+    public Contacts(String firstName, String lastName, String salutation, String accountName, String title, String phone, String mobile, String email, String mailingStreet, String mailingCity, String mailingStateProvince, String mailingZipPostalCode, String mailingCountry, String homePhone, String otherPhone, String birthdate, String description, String department) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.salutation = salutation;
         this.accountName = accountName;
         this.title = title;
         this.phone = phone;
@@ -45,26 +34,18 @@ public class Contacts {
         this.mailingStateProvince = mailingStateProvince;
         this.mailingZipPostalCode = mailingZipPostalCode;
         this.mailingCountry = mailingCountry;
-        this.otherStreet = otherStreet;
-        this.otherCity = otherCity;
-        this.otherStateProvince = otherStateProvince;
-        this.otherZipPostalCode = otherZipPostalCode;
-        this.otherCountry = otherCountry;
-        this.fax = fax;
         this.homePhone = homePhone;
         this.otherPhone = otherPhone;
-        this.asstPhone = asstPhone;
-        this.assistant = assistant;
         this.department = department;
+        this.birthdate = birthdate;
         this.description = description;
-
     }
 
-    public String getName() {
+    public String getSalutation() {
         return salutation;
     }
 
-    public void setName(String name) {
+    public void setSalutation(String salutation) {
         this.salutation = salutation;
     }
 
@@ -164,54 +145,6 @@ public class Contacts {
         this.mailingCountry = mailingCountry;
     }
 
-    public String getOtherStreet() {
-        return otherStreet;
-    }
-
-    public void setOtherStreet(String otherStreet) {
-        this.otherStreet = otherStreet;
-    }
-
-    public String getOtherCity() {
-        return otherCity;
-    }
-
-    public void setOtherCity(String otherCity) {
-        this.otherCity = otherCity;
-    }
-
-    public String getOtherStateProvince() {
-        return otherStateProvince;
-    }
-
-    public void setOtherStateProvince(String otherStateProvince) {
-        this.otherStateProvince = otherStateProvince;
-    }
-
-    public String getOtherZipPostalCode() {
-        return otherZipPostalCode;
-    }
-
-    public void setOtherZipPostalCode(String otherZipPostalCode) {
-        this.otherZipPostalCode = otherZipPostalCode;
-    }
-
-    public String getOtherCountry() {
-        return otherCountry;
-    }
-
-    public void setOtherCountry(String otherCountry) {
-        this.otherCountry = otherCountry;
-    }
-
-    public String getFax() {
-        return fax;
-    }
-
-    public void setFax(String fax) {
-        this.fax = fax;
-    }
-
     public String getHomePhone() {
         return homePhone;
     }
@@ -228,22 +161,6 @@ public class Contacts {
         this.otherPhone = otherPhone;
     }
 
-    public String getAsstPhone() {
-        return asstPhone;
-    }
-
-    public void setAsstPhone(String asstPhone) {
-        this.asstPhone = asstPhone;
-    }
-
-    public String getAssistant() {
-        return assistant;
-    }
-
-    public void setAssistant(String assistant) {
-        this.assistant = assistant;
-    }
-
     public String getDepartment() {
         return department;
     }
@@ -252,6 +169,13 @@ public class Contacts {
         this.department = department;
     }
 
+    public String getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
+    }
 
     public String getDescription() {
         return description;
@@ -260,4 +184,5 @@ public class Contacts {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

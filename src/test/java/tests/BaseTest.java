@@ -40,11 +40,11 @@ public abstract class BaseTest {
 
     }
 
-   /* @AfterTest(alwaysRun = true)
+    @AfterTest(alwaysRun = true)
     public void tearDown() {
         driver.quit();
 
-    }*/
+    }
 
 
 }

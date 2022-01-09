@@ -4,21 +4,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class TextArea {
-        String textAreaLocator = "//div[contains(@class,'modal-body')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//textarea";
-
-        WebDriver driver;
-        String label;
+    String textareaLocator = "//div[contains(@class,'modal-body')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//textarea";
+    String textareaLocatorContact = "//label[text()='%s']/ancestor::lightning-textarea//div//textarea"; //?
 
 
-    public TextArea(WebDriver driver, String label){
+    WebDriver driver;
+    String label;
+
+    public TextArea(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
     }
 
-
-    public void writeTextArea(String text){
-        System.out.printf("Writing text '%s' into textArea with label '%s'\n", text, this.label);
-        driver.findElement(By.xpath(String.format(textAreaLocator, this.label))).sendKeys(text);
+    public void write(String text) {
+        System.out.printf("Writing text '%s' into textarea with label'%s'\n", text, this.label);
+        driver.findElement(By.xpath(String.format(textareaLocator, this.label))).sendKeys(text);
     }
+
+    public void writeContact(String text) {
+        System.out.printf("Writing text '%s' into textarea with label '%s'\n", text, this.label);
+        driver.findElement(By.xpath(String.format(textareaLocatorContact, this.label))).sendKeys(text);
+    }
+
 
 }

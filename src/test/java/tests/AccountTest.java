@@ -12,7 +12,7 @@ public class AccountTest extends BaseTest {
         //логин
         loginPage
                 .open()
-                .login("fainka18-jwhv@force.com", "kawasakizx636c1");
+                .login("murashkofainasergeevna-lwpq@force.com", "kawasakizx636c1");
         //открыть страницу аккаунтов
         //кликнуть на кнопку нью
         boolean isAccountModalOpen = accountListPage
@@ -58,7 +58,7 @@ public class AccountTest extends BaseTest {
         Assert.assertEquals(accountDetailsPage.getFieldValueByName("Industry"), account.getIndustry(), "");
 */
         //проверить создание
-        System.out.println("!");
+
     }
 }
 
