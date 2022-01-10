@@ -18,6 +18,8 @@ public abstract class BaseTest {
     AccountListPage accountListPage;
     AccountModalPage accountModalPage;
     AccountDetailsPage accountDetailsPage;
+    ContactsListPage contactsListPage;
+    ContactModalPage contactModalPage;
 
 
     @BeforeTest
@@ -32,7 +34,8 @@ public abstract class BaseTest {
         accountListPage = new AccountListPage(driver);
         accountModalPage = new AccountModalPage(driver);
         accountDetailsPage = new AccountDetailsPage(driver);
-
+        contactsListPage = new ContactsListPage(driver);
+        contactModalPage = new ContactModalPage(driver);
 
 
     }

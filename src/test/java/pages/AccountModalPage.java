@@ -27,9 +27,9 @@ public class AccountModalPage extends BasePage {
         new Input(driver,"Phone").write(account.getPhone());
         new Input(driver,"Fax").write(account.getFax());
         new Input(driver, "Employees").write(account.getEmployees());
-        new TextArea(driver,"Billing Street").writeTextArea(account.getBillingStreet());
-        new TextArea(driver,"Shipping Street").writeTextArea(account.getShippingStreet());
-        new TextArea(driver,"Description").writeTextArea(account.getDescription());
+        new TextArea(driver,"Billing Street").write(account.getBillingStreet());
+        new TextArea(driver,"Shipping Street").write(account.getShippingStreet());
+        new TextArea(driver,"Description").write(account.getDescription());
         new Input(driver,"Annual Revenue").write(account.getAnnualRevenue());
         new Input(driver,"Billing City").write(account.getBillingCity());
         new Input(driver,"Billing State/Province").write(account.getBillingStateProvince());
