@@ -1,5 +1,11 @@
 package models;
+import lombok.*;
 
+@AllArgsConstructor
+@Getter
+@Setter
+@Data
+@Builder
 public class Account {
     String accountName;
     String webSite;
@@ -24,7 +30,7 @@ public class Account {
 
 
 
-    public Account(String accountName, String webSite, String type, String phone, String fax,
+   /* public Account(String accountName, String webSite, String type, String phone, String fax,
                    String employees, String annualRevenue, String industry, String description,String billingStreet,
                    String shippingStreet,String billingCity, String billingStateProvince, String shippingCity,
                    String shippingStateProvince, String billingZipPostalCode, String billingCountry,String shippingZipPostalCode,
@@ -195,7 +201,7 @@ public class Account {
 
     public void setDescription(String description) {
         this.description = description;
-    }
+    }*/
 
 
 }

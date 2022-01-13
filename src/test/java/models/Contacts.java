@@ -1,5 +1,11 @@
 package models;
+import lombok.*;
 
+@AllArgsConstructor
+@Getter
+@Setter
+@Data
+@Builder
 public class Contacts {
     String salutation;
     String firstName;
@@ -20,7 +26,7 @@ public class Contacts {
     String birthdate;
     String description;
 
-    public Contacts(String firstName, String lastName, String salutation, String accountName, String title, String phone, String mobile, String email, String mailingStreet, String mailingCity, String mailingStateProvince, String mailingZipPostalCode, String mailingCountry, String homePhone, String otherPhone, String birthdate, String description, String department) {
+    /*public Contacts(String firstName, String lastName, String salutation, String accountName, String title, String phone, String mobile, String email, String mailingStreet, String mailingCity, String mailingStateProvince, String mailingZipPostalCode, String mailingCountry, String homePhone, String otherPhone, String birthdate, String description, String department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.salutation = salutation;
@@ -183,6 +189,6 @@ public class Contacts {
 
     public void setDescription(String description) {
         this.description = description;
-    }
+    }*/
 
 }
