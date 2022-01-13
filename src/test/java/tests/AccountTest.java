@@ -13,7 +13,7 @@ import pages.ContactModalPage;
 import static org.testng.Assert.*;
 
 public class AccountTest extends BaseTest {
-    @Test
+    @Test(description = "creating new account using LOMBOCK")
     public void accountShouldBeCreated() {
         //логин
         loginPage

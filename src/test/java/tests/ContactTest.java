@@ -7,7 +7,7 @@ import pages.ContactModalPage;
 import pages.ContactsDetailsPage;
 
 public class ContactTest extends BaseTest{
-    @Test
+    @Test(description = "Creating new contact using LOMBOCK")
     public void contactShouldBeCreated(){
         loginPage
                 .open()
