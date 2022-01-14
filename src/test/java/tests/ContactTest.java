@@ -1,25 +1,34 @@
 package tests;
 
+import lombok.extern.log4j.Log4j2;
 import models.ContactFactory;
 import models.Contacts;
 import org.testng.annotations.Test;
 import pages.ContactModalPage;
 import pages.ContactsDetailsPage;
 
+import static org.testng.Assert.assertTrue;
+
+@Log4j2
 public class ContactTest extends BaseTest{
     @Test(description = "Creating new contact using LOMBOCK")
-    public void contactShouldBeCreated(){
+    public void contactShouldBeCreated() {
+        log.info("Start test new contact");
         loginPage
                 .open()
                 .login("murashkofainasergeevna-lwpq@force.com", "kawasakizx636c1");
-
-        ContactModalPage isContactModalOpen = contactsListPage
+        boolean isContactModalOpen = contactsListPage
                 .open()
-                .clickNew();
-        Contacts contacts = ContactFactory.get();
+                .clickNew()
+                .isPageOpen();
+        log.info("opening check");
+        assertTrue(isContactModalOpen, "pop-up didn't open");
 
-        boolean isDetailsPageOpen = contactModalPage
-                .create(contacts);
+
+        Contacts contacts = ContactFactory.get();
+        log.info("created new contact");
+        boolean isContactDetailsPageOpen = contactModalPage
+                .created(contacts);
 
 
 

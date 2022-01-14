@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
 
-    LoginPage loginPage;
     WebDriver driver;
     HomePage homePage;
     AccountListPage accountListPage;
@@ -20,7 +19,7 @@ public abstract class BaseTest {
     AccountDetailsPage accountDetailsPage;
     ContactsListPage contactsListPage;
     ContactModalPage contactModalPage;
-
+    LoginPage loginPage;
 
     @BeforeTest
     public void SetUp() {
@@ -29,13 +28,13 @@ public abstract class BaseTest {
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         accountListPage = new AccountListPage(driver);
         accountModalPage = new AccountModalPage(driver);
         accountDetailsPage = new AccountDetailsPage(driver);
         contactsListPage = new ContactsListPage(driver);
         contactModalPage = new ContactModalPage(driver);
+        loginPage = new LoginPage(driver);
 
 
     }

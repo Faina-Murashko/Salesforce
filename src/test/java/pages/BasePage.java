@@ -16,9 +16,9 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 30);
+
     }
-    protected abstract boolean isPageOpen();
+    protected abstract boolean isPageOpen() throws InterruptedException;
 
     protected boolean isExist(By locator){
         try {

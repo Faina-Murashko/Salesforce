@@ -8,18 +8,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ContactModalPage extends BasePage{
-    private static final By MODAL_TITLE = By.xpath("//*[contains(@class, 'inlineTitle')]");
+    private static final By MODAL_TITLE = By.xpath("//*[contains(@class, 'slds-modal__header')]/h2");
 
     public ContactModalPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
-    protected boolean isPageOpen() {
+    public boolean isPageOpen() {
         return isExist(MODAL_TITLE);
     }
 
-    public boolean create (Contacts contacts) {
+    public boolean created (Contacts contacts) {
 
         new DropDown(driver, "Salutation").selectOptionsContact(contacts.getSalutation());
         new Input(driver, "First Name").writeContact(contacts.getFirstName());
