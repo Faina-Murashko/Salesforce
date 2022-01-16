@@ -10,7 +10,7 @@ import static org.testng.Assert.*;
 @Log4j2
 public class AccountTest extends BaseTest {
     @Test(description = "creating new account using LOMBOCK")
-    public void accountShouldBeCreated() {
+    public void accountShouldBeCreated()  {
         log.info("Start tests login");
         loginPage
                 .open()
@@ -20,9 +20,11 @@ public class AccountTest extends BaseTest {
         boolean isAccountModalOpen = accountListPage
                 .open()
                 .clickNew()
+                .clickSave()
                 .isPageOpen();
         log.info("that account modal opened");
         assertTrue(isAccountModalOpen, "Попап не открылся");
+        log.info("that account don't opened");
 
         Account account = AccountFactory.get();
 
@@ -30,15 +32,13 @@ public class AccountTest extends BaseTest {
                 .create(account)
                 .isPageOpen();
                 log.info("account should be created");
- //       assertTrue(isDetailsPageOpen, "Страница Details не открылась");
-       /* Assert.assertEquals(accountDetailsPage.getFieldValueByName("Account Name"), account.getAccountName(), "");
-        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Phone"), account.getPhone(), "");
-        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Fax"), account.getType(), "");
-        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Employees"), account.getType(), "");
-        Assert.assertEquals(accountDetailsPage.getFieldValueByName("AnnualRevenue"), account.getType(), "");
-        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Description"), account, "");
-        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Type"), account.getType(), "");
-        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Industry"), account.getIndustry(), "");*/
+        assertTrue(isDetailsPageOpen, "Страница Details не открылась");
+        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Account Name"), account.getAccountName(), "");
+        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Phone"), account.getPhone(), "Phone number does not math the expected");
+        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Fax"), account.getFax(), "Fax does not math the expected ");
+        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Employees"), account.getEmployees(), "Employees does not math the expected");
+        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Description"), account, "Description does not math the expected");
+        Assert.assertEquals(accountDetailsPage.getFieldValueByName("Type"), account.getType(), "Type does not math the expected");
 
 
     }

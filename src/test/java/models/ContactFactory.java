@@ -1,11 +1,14 @@
 package models;
 
 import com.github.javafaker.Faker;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class ContactFactory {
 static Faker faker = new Faker();
 
 public static Contacts get () {
+    log.info("created new random dara using faker for created new contacts");
         return Contacts.builder()
                     .salutation("Ms.")
                     .firstName(faker.name().firstName())

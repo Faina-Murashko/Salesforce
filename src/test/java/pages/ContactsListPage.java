@@ -1,39 +1,35 @@
 package pages;
 
-import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-@Log4j2
-public class ContactsListPage extends BasePage {
-
+public class ContactsListPage extends BasePage{
     public static final By BREADCRUMBS_LABEL = By.xpath("//nav[@aria-label='Breadcrumbs']//span");
+    String fieldValueContacts = "//records-lwc-detail-panel//span[text()='%s']/ancestor::force-record-layout-item//lighting-formatted-text";
 
     public ContactsListPage(WebDriver driver) {
         super(driver);
+    }
+
+    public ContactsListPage open(){
+        driver.get(BASE_URL + "/lightning/o/Contact/list");
+        return this;
     }
 
     @Override
     protected boolean isPageOpen() {
         return isExist(BREADCRUMBS_LABEL);
     }
-    
-    @Step("Opening contact page")
-    public ContactsListPage open(){
-        driver.get(BASE_URL + "/lightning/o/Contact/list");
-        return this;
-    }
 
-    public ContactModalPage clickNew() {
-        log.info("Click on new button for created new contact");
-  //      wait.until(ExpectedConditions.visibilityOfElementLocated(NEW_BUTTON));
+    public ContactModalPage clickNew(){
+        //       wait.until(ExpectedConditions.visibilityOfElementLocated(NEW_BUTTON));
         driver.findElement(NEW_BUTTON).click();
-        log.info("successful created new contact");
         return new ContactModalPage(driver);
     }
-       
 
-    
+    public String getFieldValueByName(String fieldName) {
+        return driver. findElement(By.xpath(String.format(fieldValueContacts, fieldName))).getText();
+
+
+    }
 }

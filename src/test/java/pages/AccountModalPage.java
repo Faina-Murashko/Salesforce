@@ -41,16 +41,14 @@ public class AccountModalPage extends BasePage {
         new Input(driver,"Shipping Country").write(account.getShippingCountry());
 
 
-        driver.findElement(NEW_BUTTON).click();
+        driver.findElement(SAVE_BUTTON).click();
         return clickSave();
 
 
     }
     public AccountDetailsPage clickSave(){
-        driver.findElement(NEW_BUTTON).click();
+        driver.findElement(SAVE_BUTTON).click();
         return new AccountDetailsPage(driver);
 
     }
 }
-
-

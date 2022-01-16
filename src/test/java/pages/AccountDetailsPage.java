@@ -5,9 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountDetailsPage extends  BasePage{
     public static final By DETAILS_LINK = By.xpath("//a[@id='detailTab__item']");
-    String fieldValue = "//records-lwc-detail-panel//span[text()='%s']/ancestor::force-record-layout-item//lighting-formatted-text";
+    String fieldValueAccount = "//records-lwc-detail-panel//span[text()='%s']/ancestor::force-record-layout-item//lighting-formatted-text";
 
-    //a[@id="detailTab__item"]
     public AccountDetailsPage(WebDriver driver) {
         super(driver);
     }
@@ -17,10 +16,12 @@ public class AccountDetailsPage extends  BasePage{
         return isExist(DETAILS_LINK);
     }
 
-
     public String getFieldValueByName(String fieldName) {
-       return driver. findElement(By.xpath(String.format(fieldValue, fieldName))).getText();
+        return driver. findElement(By.xpath(String.format(fieldValueAccount, fieldName))).getText();
 
 
     }
+
+
+
 }

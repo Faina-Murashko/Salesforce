@@ -1,11 +1,14 @@
 package models;
 
 import com.github.javafaker.Faker;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class AccountFactory {
     static Faker faker = new Faker();
 
     public static Account get (){
+        log.info("created new random data using faker for created new accounts");
         return Account.builder()
                 .accountName(faker.name().firstName())
                 .webSite(faker.chuckNorris().fact())
@@ -28,4 +31,5 @@ public class AccountFactory {
                 .description(faker.chuckNorris().fact())
                 .build();
     }
+
 }
