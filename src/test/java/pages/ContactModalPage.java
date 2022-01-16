@@ -15,7 +15,7 @@ public class ContactModalPage extends BasePage{
     }
 
     @Override
-    protected boolean isPageOpen() {
+    public boolean isPageOpen() {
         return isExist(MODAL_TITLE);
     }
 
@@ -46,4 +46,3 @@ public class ContactModalPage extends BasePage{
     }
 
 }
-

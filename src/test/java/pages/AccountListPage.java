@@ -25,7 +25,7 @@ public class AccountListPage extends BasePage{
 
 
     public AccountModalPage clickNew(){
- //       wait.until(ExpectedConditions.visibilityOfElementLocated(NEW_BUTTON));
+        //       wait.until(ExpectedConditions.visibilityOfElementLocated(NEW_BUTTON));
         driver.findElement(NEW_BUTTON).click();
         return new AccountModalPage(driver);
     }

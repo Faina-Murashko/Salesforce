@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ContactsListPage extends BasePage{
     public static final By BREADCRUMBS_LABEL = By.xpath("//nav[@aria-label='Breadcrumbs']//span");
+    String fieldValueContacts = "//records-lwc-detail-panel//span[text()='%s']/ancestor::force-record-layout-item//lighting-formatted-text";
 
     public ContactsListPage(WebDriver driver) {
         super(driver);
@@ -24,5 +25,11 @@ public class ContactsListPage extends BasePage{
         //       wait.until(ExpectedConditions.visibilityOfElementLocated(NEW_BUTTON));
         driver.findElement(NEW_BUTTON).click();
         return new ContactModalPage(driver);
+    }
+
+    public String getFieldValueByName(String fieldName) {
+        return driver. findElement(By.xpath(String.format(fieldValueContacts, fieldName))).getText();
+
+
     }
 }
